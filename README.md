@@ -21,7 +21,11 @@ WeatherNow is a cutting-edge web application designed to provide you with up-to-
 
 ## Screenshots
 
-![WeatherNow App](url-to-screenshot)
+![WeatherNow App](./Screenshots/Main.png)
+![WeatherNow App](./Screenshots/Barranquilla.png)
+![WeatherNow App](./Screenshots/Medellín.png)
+![WeatherNow App](./Screenshots/Aomori.png)
+![WeatherNow App](./Screenshots/Texas.png)
 
 ## Usage
 

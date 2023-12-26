@@ -5,6 +5,7 @@ Welcome to WeatherNow, your sleek and modern weather web app! 🌦️
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
 [![OpenWeather API](https://img.shields.io/badge/Powered%20by-OpenWeather-orange.svg)](https://openweathermap.org/)
 [![Tooltip Library](https://img.shields.io/badge/Tooltips%20by-Tippy.js-pink.svg)](https://atomiks.github.io/tippyjs/)
+[![Flags API](https://img.shields.io/badge/Flags%20by-FlagsAPI-yellow.svg)](https://flagsapi.com/)
 
 ## Overview
 

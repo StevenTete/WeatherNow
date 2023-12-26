@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+*{
+    font-family: 'Hind', sans-serif;
+    overflow: hidden;
+}
+body{
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+#icon{
+    animation: rotate 1s infinite;
+}
+h1{
+    font-size: 55px;
+    font-family: 'Caveat', cursive;
+}
+.container {
+    display: flex;
+    background-size: cover;
+    background-position-y: -90px;
+    background-image: url('Assets/Media/anime-clouds.jpg');
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.background {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 2em 3em;
+    width: 35%;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    filter: contrast(1.1);
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.7);
+}
+/* Weather Conditions */
+.ash {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/ash.jpg');
+}
+.clear {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/clear.gif');
+}
+.clouds {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/clouds.gif');
+}
+.drizzle {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/drizzle.gif');
+}
+.fog {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/fog.gif');
+}
+.mist {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/mist.gif');
+}
+.rain {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/rainy.gif');
+}
+.sand {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/sand.jpg');
+}
+.smoke {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/smoke.gif');
+}
+.snow {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/snow.webp');
+}
+.squall {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/squall.jpg');
+}
+.thunderstorm {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/thunderstorm.gif');
+}
+.tornado {
+    animation: fadeIn 1.3s;
+    background-image: url('Assets/Media/tornado.gif');
+}
+.searchSection{
+    margin: 1.5em;
+    text-wrap: pretty;
+}
+.weather{
+    transition: 0.4s all ease-in-out;
+    padding: 1em;
+    display: none;
+}
+#weatherStatus{
+    font-size: 29px;
+    margin-bottom: -0.1em;
+}
+#errorText{
+    margin: 0 auto;
+}
+#error{
+    text-align: center;
+}
+#error404{
+    margin: 0 auto;
+    display: none;
+    max-height: 300px;
+    position: relative;
+}
+input{
+    width: 94%;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0.4em;
+}
+button{
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    width: 98%;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 0.4em;
+    transition: 0.2s all ease-in-out;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.3);
+        color: rgba(0, 0, 0, 0.7);
+    }
+}
+#noSelected {
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    font-size: 18px;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.hide{
+    animation: fadeIn 1.2s;
+    display: none;
+}
+.show{
+    display: block;
+}
+.flex{
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+.item{
+    margin: 0.8em;
+    cursor: pointer;
+}
+.githubProfile{
+    position: absolute;
+    margin: 2.5em;
+    right: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+    #temp,#humidity,#wind{text-wrap: wrap;}
+    h1{
+        font-size: 44px;
+    }
+    #error404{
+        max-height: 200px;
+    }
+    .container{
+        margin-top: -2em;
+        background-size: 1600px;
+    }
+    .background{
+        width: 90%;
+        padding: 2em 0em;
+    }
+    
+    .item{
+        padding-top: 20px;
+        width: 33%;
+        margin: -1.6em 0.8em;
+        text-align: center;
+    }
+    .item img{
+        display: block;
+        margin: 8px auto;
+    }
+    .item h2{
+        font-size: 18px;
+        padding-bottom: 12px;
+    }
+    .githubProfile{
+        scale: 0.9;
+    }
+    }

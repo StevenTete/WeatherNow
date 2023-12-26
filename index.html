@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Assets/Media/sun-cloudy-fill.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <a class="githubProfile" href="https://github.com/StevenTete" target="_blank"><img src="Assets/Media/github.png" alt="GitHub logo" style="width: 40px;"></a>
+    <div class="container" id="container">
+        <div class="background" id="background">
+            <div class="searchSection" id="searchSection">
+                <h1><i class="ri-sun-line" id="icon"></i> WeatherNow</h1>
+                <input type="text" id="cityInput" placeholder="Insert a Country, State or City">
+                <br><br>
+                <button class="search" id="search"><i class="ri-search-2-line"></i> Search</button>
+                <br><br>
+                <span id="noSelected"><i class="ri-error-warning-line"></i> You have not written any city</span>
+            </div>
+            
+            <div class="weather" id="weatherInfo">
+                <h1 id="location"></h1>
+                <h2 id="weatherStatus"></h2>
+                <div class="error" id="error">
+                  <h2 id="errorText"></h2>
+                  <img src="Assets/Media/404.gif" id="error404" alt="Crying Emoji">
+                </div>
+                <div class="flex">
+                    <div class="item" id="itemTemperature"><h2 id="temp"></h2></div>
+                    <div class="item" id="itemHumidity"><h2 id="humidity"></h2></div>
+                    <div class="item" id="itemWind"><h2 id="wind"></h2></div>
+                </div>
+                <br><button id="backToSearch"><i class="ri-arrow-left-line"></i> Back to Search</button><br>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="hover.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+
+      tippy('#itemTemperature', {
+        content: 'Temperature (Tap to change the scale)',
+        placement: 'left',
+      });
+      tippy('#itemHumidity', {
+        content: 'Humidity Percentage',
+        placement: 'bottom'
+      });
+      tippy('#itemWind', {
+        content: 'Wind Speed (meters per second)',
+        placement: 'right'
+      });
+      tippy('.githubProfile', {
+        content: 'My GitHub Profile :D',
+        placement: 'left'
+      });
+    </script>
+</body>
+</html>

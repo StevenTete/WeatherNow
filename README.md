@@ -29,7 +29,7 @@ WeatherNow is a cutting-edge web application designed to provide you with up-to-
 
 ## Usage
 
-To start using WeatherNow, simply [visit the website](https://weathernow-app.com) and experience weather updates like never before. No downloads or installations required!
+To start using WeatherNow, simply [visit the website](https://steventete.github.io/WeatherNow/index.html) and experience weather updates like never before. No downloads or installations required!
 
 ## Feedback
 

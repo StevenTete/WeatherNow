@@ -18,6 +18,7 @@ let cityInput = document.getElementById('cityInput');
 const api = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const key = 'ca7d7fdad89664ea1407c30ac66eb163';
 
+// This function obtains the users location from navigator and make a call to the API for show his city weather info
 navigator.geolocation.getCurrentPosition(position => {
 	const lat = position.coords.latitude;
 	const lon = position.coords.longitude;
@@ -265,7 +266,7 @@ function alternateView() {
     searchSection.classList.add('hide');
     weatherInfo.classList.add('show');
 }
-
+// Preload background images for better experience when the background changes
 function preloadImages() {
 	const imageUrls = [
 		'Assets/Media/ash.webp',
@@ -290,5 +291,4 @@ function preloadImages() {
 	}
 }
 
-// Llamar a la función para precargar imágenes cuando la página esté completamente cargada
 window.addEventListener('load', preloadImages);

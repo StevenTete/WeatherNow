@@ -10,6 +10,11 @@ body{
     color: white;
     margin: 0;
 }
+.favicon{
+    max-height: 60px; 
+    vertical-align: middle;
+    margin-right: 10px;
+}
 #icon{
     animation: rotate 1s infinite;
 }
@@ -20,7 +25,7 @@ h1{
 .container {
     display: flex;
     background-size: cover;
-    background-position-y: -90px;
+    background-position: center;
     background-image: url('Assets/Media/anime-clouds.jpg');
     background-color: black;
     align-items: center;
@@ -33,64 +38,29 @@ h1{
     padding: 2em 3em;
     width: 35%;
     background-color: transparent;
-    backdrop-filter: blur(8px);
-    filter: contrast(1.1);
+    backdrop-filter: blur(10px);
+    filter: brightness(0.98);
     transition: all 0.1s ease-in-out;
     box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.7);
 }
+.textShadow{
+    text-shadow: 0px 0px 4px black;
+}
 /* Weather Conditions */
-.ash {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/ash.jpg');
-}
-.clear {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/clear.gif');
-}
-.clouds {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/clouds.gif');
-}
-.drizzle {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/drizzle.gif');
-}
-.fog {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/fog.gif');
-}
-.mist {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/mist.gif');
-}
-.rain {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/rainy.gif');
-}
-.sand {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/sand.jpg');
-}
-.smoke {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/smoke.gif');
-}
-.snow {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/snow.webp');
-}
-.squall {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/squall.jpg');
-}
-.thunderstorm {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/thunderstorm.gif');
-}
-.tornado {
-    animation: fadeIn 1.3s;
-    background-image: url('Assets/Media/tornado.gif');
-}
+.ash{animation:fadeIn 1.3s;background-image:url('Assets/Media/ash.webp');}
+.clear{animation:fadeIn 1.3s;background-image:url('Assets/Media/clear.gif');}
+.clouds{animation:fadeIn 1.3s;background-image:url('Assets/Media/clouds.gif');}
+.drizzle{animation:fadeIn 1.3s;background-image:url('Assets/Media/drizzle.webp');}
+.fog{animation:fadeIn 1.3s;background-image:url('Assets/Media/fog.webp');}
+.mist{animation:fadeIn 1.3s;background-image:url('Assets/Media/mist.webp');}
+.rain{animation:fadeIn 1.3s;background-image:url('Assets/Media/rainy.webp');}
+.sand{animation:fadeIn 1.3s;background-image:url('Assets/Media/sand.jpg');}
+.smoke{animation:fadeIn 1.3s;background-image:url('Assets/Media/smoke.webp');}
+.snow{animation:fadeIn 1.3s;background-image:url('Assets/Media/snow.webp');}
+.squall{animation:fadeIn 1.3s;background-image:url('Assets/Media/squall.jpg');}
+.thunderstorm{animation:fadeIn 1.3s;background-image:url('Assets/Media/thunderstorm.webp');}
+.tornado{animation:fadeIn 1.3s;background-image:url('Assets/Media/tornado.webp');}
+
 .searchSection{
     margin: 1.5em;
     text-wrap: pretty;
@@ -113,7 +83,7 @@ h1{
 #error404{
     margin: 0 auto;
     display: none;
-    max-height: 300px;
+    max-height: 240px;
     position: relative;
 }
 input{
@@ -160,16 +130,23 @@ button{
 .show{
     display: block;
 }
-.flex{
+.flex {
     width: 100%;
     display: flex;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
+
 .item{
     margin: 0.8em;
     cursor: pointer;
 }
+nav{
+    transition: all 0.2s ease-in-out;
+}
 .githubProfile{
+    transition: all 0.2s ease-in-out;
     position: absolute;
     margin: 2.5em;
     right: 0;
@@ -181,6 +158,11 @@ button{
     h1{
         font-size: 44px;
     }
+    .favicon{
+        max-height: 40px; 
+        vertical-align: middle;
+        margin-right: 10px;
+    }
     #error404{
         max-height: 200px;
     }
@@ -189,8 +171,8 @@ button{
         background-size: 1600px;
     }
     .background{
-        width: 90%;
-        padding: 2em 0em;
+        width: 85%;
+        padding: 0.2em 0em;
     }
     
     .item{

@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="WeatherNow - A modern weather web application providing real-time updates and forecasts.">
     <meta name="keywords" content="Weather, Forecast, Web App, JavaScript, HTML, CSS">
     <meta name="author" content="Steven Tete">
     <title>WeatherNow</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="Assets/Media/sun-cloudy-fill.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Assets/Media/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-  <a class="githubProfile" href="https://github.com/StevenTete" target="_blank"><img src="Assets/Media/github.png" alt="GitHub logo" style="width: 40px;"></a>
+  <header>
+    <nav>
+      <a class="githubProfile" href="https://github.com/StevenTete" target="_blank"><img src="Assets/Media/github.ico" alt="GitHub logo" style="width: 40px;"></a>
+    </nav>
+  </header>
     <div class="container" id="container">
         <div class="background" id="background">
             <div class="searchSection" id="searchSection">
-                <h1><i class="ri-sun-line" id="icon"></i> WeatherNow</h1>
+                <h1><img src="Assets/Media/favicon.ico" class="favicon" alt="Sun behind the clouds">WeatherNow</h1>
                 <input type="text" id="cityInput" placeholder="Insert a Country, State or City">
                 <br><br>
                 <button class="search" id="search"><i class="ri-search-2-line"></i> Search</button>
@@ -41,11 +45,10 @@
         </div>
     </div>
     <script src="script.js"></script>
-    <script src="hover.js"></script>
+    <script src="Assets/JavaScript/hover.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script>
-
       tippy('#itemTemperature', {
         content: 'Temperature (Tap to change the scale)',
         placement: 'left',

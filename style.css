@@ -123,9 +123,15 @@ button{
         opacity: 1;
     }
 }
+.flag{
+    opacity: 0;
+}
 .hide{
     animation: fadeIn 1.2s;
     display: none;
+}
+.fadeIn{
+    animation: fadeIn 1s ease-in-out both;
 }
 .show{
     display: block;

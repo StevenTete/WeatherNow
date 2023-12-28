@@ -31,7 +31,7 @@ navigator.geolocation.getCurrentPosition(position => {
 		handleWeatherData(usersLocation);
 		alternateView();
 		
-		searchedLocation.innerHTML = usersLocation.name + ` <img src="https://flagsapi.com/${usersLocation.sys.country}/flat/64.png" loading="lazy" style="vertical-align: middle; max-height: 55px;">`;
+		searchedLocation.innerHTML = usersLocation.name + ` <img class="fadeIn flag" src="https://flagsapi.com/${usersLocation.sys.country}/flat/64.png" loading="lazy" style="vertical-align: middle; max-height: 55px;">`;
 	})
 	.catch(error => {
 		console.error('Error fetching data:', error);
@@ -94,7 +94,7 @@ function handleNotFoundError() {
 }
 
 function handleWeatherData(json) {
-    searchedLocation.innerHTML = cityInput.value + ` <img src="https://flagsapi.com/${json.sys.country}/flat/64.png" loading="lazy" style="vertical-align: middle; max-height: 55px;">`;
+    searchedLocation.innerHTML = cityInput.value + ` <img class="fadeIn flag" src="https://flagsapi.com/${json.sys.country}/flat/64.png" loading="lazy" style="vertical-align: middle; max-height: 55px;">`;
 
     // Change background image and weather status depending on the weather obtained from the API
     container.className = 'container ' + json.weather[0].main.toLowerCase();

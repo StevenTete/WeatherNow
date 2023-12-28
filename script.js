@@ -265,3 +265,30 @@ function alternateView() {
     searchSection.classList.add('hide');
     weatherInfo.classList.add('show');
 }
+
+function preloadImages() {
+	const imageUrls = [
+		'Assets/Media/ash.webp',
+		'Assets/Media/clear.gif',
+		'Assets/Media/clouds.gif',
+		'Assets/Media/drizzle.webp',
+		'Assets/Media/fog.webp',
+		'Assets/Media/mist.webp',
+		'Assets/Media/rainy.webp',
+		'Assets/Media/sand.jpg',
+		'Assets/Media/smoke.webp',
+		'Assets/Media/snow.webp',
+		'Assets/Media/squall.jpg',
+		'Assets/Media/thunderstorm.webp',
+		'Assets/Media/tornado.webp'
+	];
+
+	// Crear imágenes y precargarlas
+	for (const imageUrl of imageUrls) {
+		const img = new Image();
+		img.src = imageUrl;
+	}
+}
+
+// Llamar a la función para precargar imágenes cuando la página esté completamente cargada
+window.addEventListener('load', preloadImages);

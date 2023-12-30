@@ -44,19 +44,19 @@ h1{
     text-shadow: 0px 0px 4px black;
 }
 /* Weather Conditions */
-.ash{animation:fadeIn 1s;background-image:url('Assets/Media/ash.webp');}
-.clear{animation:fadeIn 1s;background-image:url('Assets/Media/clear.gif');}
-.clouds{animation:fadeIn 1s;background-image:url('Assets/Media/clouds.gif');}
-.drizzle{animation:fadeIn 1s;background-image:url('Assets/Media/drizzle.gif');}
-.fog{animation:fadeIn 1s;background-image:url('Assets/Media/fog.webp');}
-.mist{animation:fadeIn 1s;background-image:url('Assets/Media/mist.webp');}
-.rain{animation:fadeIn 1s;background-image:url('Assets/Media/rainy.webp');}
-.sand{animation:fadeIn 1s;background-image:url('Assets/Media/sand.jpg');}
-.smoke{animation:fadeIn 1s;background-image:url('Assets/Media/smoke.webp');}
-.snow{animation:fadeIn 1s;background-image:url('Assets/Media/snow.webp');}
-.squall{animation:fadeIn 1s;background-image:url('Assets/Media/squall.jpg');}
-.thunderstorm{animation:fadeIn 1s;background-image:url('Assets/Media/thunderstorm.webp');}
-.tornado{animation:fadeIn 1s;background-image:url('Assets/Media/tornado.webp');}
+.ash{background-image:url('Assets/Media/ash.webp');}
+.clear{background-image:url('Assets/Media/clear.gif');}
+.clouds{background-image:url('Assets/Media/clouds.gif');}
+.drizzle{background-image:url('Assets/Media/drizzle.gif');}
+.fog{background-image:url('Assets/Media/fog.webp');}
+.mist{background-image:url('Assets/Media/mist.webp');}
+.rain{background-image:url('Assets/Media/rainy.webp');}
+.sand{background-image:url('Assets/Media/sand.jpg');}
+.smoke{background-image:url('Assets/Media/smoke.webp');}
+.snow{background-image:url('Assets/Media/snow.webp');}
+.squall{background-image:url('Assets/Media/squall.jpg');}
+.thunderstorm{background-image:url('Assets/Media/thunderstorm.webp');}
+.tornado{background-image:url('Assets/Media/tornado.webp');}
 
 .searchSection{
     margin: 1.5em;
@@ -143,7 +143,11 @@ button{
     margin: 0.8em;
     cursor: pointer;
 }
+nav{
+    transition: none;
+}
 #myLocation{
+    transition: none;
     padding: 0;
     border: 0;
     width: auto;
@@ -166,6 +170,7 @@ button{
     height: 35px;
 }
 .githubProfile{
+    transition: none;
     position: absolute;
     margin: 2.5em;
     right: 0;

@@ -11,6 +11,7 @@
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="Assets/Media/favicon.ico" type="image/x-icon">
+    <link rel="mask-icon" href="Assets/Media/maskableIcon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
@@ -67,7 +68,7 @@
     <!-- Scripts -->
     <script src="script.js"></script>
     <script src="Assets/extra.js"></script>
-    <script src="Assets/pwabuilder-sw.js"></script>
+    <script src="Assets/sw.js"></script>
     <script>
       if (typeof navigator.serviceWorker !== 'undefined') {
         navigator.serviceWorker.register('sw.js')

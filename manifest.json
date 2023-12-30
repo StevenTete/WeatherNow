@@ -1,0 +1,24 @@
+{
+  "name": "WeatherNow - Current Forecast",
+  "short_name": "WeatherNow",
+  "description": "A modern weather web application providing real-time updates and forecasts.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2598e6",
+  "icons": [
+    {
+      "src": "/Assets/Media/maskable_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Assets/Media/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "id": "wn"
+}

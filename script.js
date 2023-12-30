@@ -184,7 +184,7 @@ function handleWeatherData(json) {
 	  }
 
     let tempMode = 0;
-    const termImage = '<img src="Assets/Media/term.png" alt="Term Logo" style="height: 40px; vertical-align: middle;">';
+    const termImage = '<img src="Assets/Media/term.webp" alt="Term Logo" style="height: 40px; vertical-align: middle;">';
 
     tempText.addEventListener('click', () => {
         const celsiusTemp = json.main.temp;

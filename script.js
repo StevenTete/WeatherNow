@@ -1,49 +1,11 @@
-// DOM vars
-let searchButton = document.getElementById('search');
-let tempText = document.getElementById('temp');
-let humidity = document.getElementById('humidity');
-let wind = document.getElementById('wind');
-let searchedLocation = document.getElementById('location');
-let searchSection = document.getElementById('searchSection');
-let weatherInfo = document.getElementById('weatherInfo');
-let backToSearch = document.getElementById('backToSearch');
-let weatherStatus = document.getElementById('weatherStatus');
-let noSelected = document.getElementById('noSelected');
-let container = document.getElementById('container');
-let errorText = document.getElementById('errorText');
-let error404 = document.getElementById('error404');
-let cityInput = document.getElementById('cityInput');
+let searchButton=document.getElementById('search'),tempText=document.getElementById('temp'),humidity=document.getElementById('humidity'),wind=document.getElementById('wind'),searchedLocation=document.getElementById('location'),searchSection=document.getElementById('searchSection'),weatherInfo=document.getElementById('weatherInfo'),backToSearch=document.getElementById('backToSearch'),weatherStatus=document.getElementById('weatherStatus'),noSelected=document.getElementById('noSelected'),container=document.getElementById('container'),errorText=document.getElementById('errorText'),error404=document.getElementById('error404'),cityInput=document.getElementById('cityInput'),itemTemperature=document.getElementById('itemTemperature'),itemHumidity=document.getElementById('itemHumidity'),itemWind=document.getElementById('itemWind'),tooltip1=document.getElementById('tooltip1'),tooltip2=document.getElementById('tooltip2'),tooltip3=document.getElementById('tooltip3'),arrow1=document.getElementById('arrow1'),arrow2=document.getElementById('arrow2'),arrow3=document.getElementById('arrow3'), myLocation = document.getElementById('myLocation');
 
 // OpenWeather Constants
 const api = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const key = 'ca7d7fdad89664ea1407c30ac66eb163';
 
-// This function obtains the users location from navigator and make a call to the API for show his city weather info
-navigator.geolocation.getCurrentPosition(position => {
-	const lat = position.coords.latitude;
-	const lon = position.coords.longitude;
-	let queryUsersLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
-    
-	fetch(queryUsersLocation)
-	.then(usersLocation => usersLocation.json())
-	.then(usersLocation => {
-
-		handleWeatherData(usersLocation);
-		alternateView();
-		
-		searchedLocation.innerHTML = usersLocation.name + ` <img class="fadeIn flag" src="https://flagsapi.com/${usersLocation.sys.country}/flat/64.png" loading="lazy" style="vertical-align: middle; max-height: 55px;">`;
-	})
-	.catch(error => {
-		console.error('Error fetching data:', error);
-	});
-
-	
-	
-
-});
-
 // This function obtains the user's city from the input text, makes an API call, receives the info as JSON, and shows the weather info in the corresponding fields
-function getAndShowData() {
+function getData() {
     // Get the city from Input and concatenate it
     let cityValue = cityInput.value.trim();
     let query = `${api}${cityValue}&units=metric&appid=${key}&lang=en`;
@@ -51,6 +13,9 @@ function getAndShowData() {
     // Show text warning if the search button is pressed and input is empty
     if (cityValue === '') {
         noSelected.style.opacity = '1';
+		setTimeout(() => {
+			noSelected.style.opacity = 0;
+		}, 2000);
         return;
     }
 
@@ -71,8 +36,28 @@ function getAndShowData() {
     // Alternate from the search section to the weather info section
     alternateView();
 }
-
-// Additional functions
+// This function obtains the users location from navigator and make a call to the API for show his city weather info automatically
+function getUsersLocation() {
+	navigator.geolocation.getCurrentPosition(position => {
+		const lat = position.coords.latitude;
+		const lon = position.coords.longitude;
+		let queryUsersLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
+		
+		fetch(queryUsersLocation)
+		.then(usersLocation => usersLocation.json())
+		.then(usersLocation => {
+	
+			handleWeatherData(usersLocation);
+			alternateView();
+			
+			searchedLocation.innerHTML = usersLocation.name + ` <img class="fadeIn flag" src="https://flagsapi.com/${usersLocation.sys.country}/flat/64.png" alt="${usersLocation.sys.country} flag" style="vertical-align: middle; max-height: 55px;">`;
+		})
+		.catch(error => {
+			console.error('Error fetching data:', error);
+		});
+	});
+}
+// Error Handling
 function handleNotFoundError() {
     searchedLocation.innerHTML = '';
     weatherStatus.innerHTML = '';
@@ -92,9 +77,9 @@ function handleNotFoundError() {
         backToSearch.click();
     }, 3000);
 }
-
+// Show weather info
 function handleWeatherData(json) {
-    searchedLocation.innerHTML = cityInput.value + ` <img class="fadeIn flag" src="https://flagsapi.com/${json.sys.country}/flat/64.png" loading="lazy" style="vertical-align: middle; max-height: 55px;">`;
+    searchedLocation.innerHTML = cityInput.value + ` <img class="fadeIn flag" src="https://flagsapi.com/${json.sys.country}/flat/64.png" alt="${json.sys.country} flag" style="vertical-align: middle; max-height: 55px;">`;
 
     // Change background image and weather status depending on the weather obtained from the API
     container.className = 'container ' + json.weather[0].main.toLowerCase();
@@ -199,7 +184,7 @@ function handleWeatherData(json) {
 	  }
 
     let tempMode = 0;
-    const termImage = '<img src="Assets/Media/term.png" loading="lazy" style="height: 40px; vertical-align: middle;">';
+    const termImage = '<img src="Assets/Media/term.png" alt="Term Logo" style="height: 40px; vertical-align: middle;">';
 
     tempText.addEventListener('click', () => {
         const celsiusTemp = json.main.temp;
@@ -232,26 +217,18 @@ function handleWeatherData(json) {
     });
 
     // Show the main weather data (temperature, humidity, and wind speed) with icons
-    tempText.innerHTML = '<img src="Assets/Media/term.png" loading="lazy" style="height: 40px; vertical-align: middle;">' + json.main.temp + ' °C';
-    humidity.innerHTML = '<img src="Assets/Media/humidity.png" loading="lazy" style="height: 37px; vertical-align: middle;"> ' + json.main.humidity + '%';
-    wind.innerHTML = '<img src="Assets/Media/wind.png" loading="lazy" style="height: 42px; vertical-align: middle;"> ' + json.wind.speed + 'm/s';
+    tempText.innerHTML = '<img src="Assets/Media/term.webp" alt="Term Logo" style="height: 40px; vertical-align: middle;">' + json.main.temp + ' °C';
+    humidity.innerHTML = '<img src="Assets/Media/humidity.webp" alt="Humidity Logo" style="height: 37px; vertical-align: middle;"> ' + json.main.humidity + '%';
+    wind.innerHTML = '<img src="Assets/Media/wind.webp" alt="Wind Logo" style="height: 42px; vertical-align: middle;"> ' + json.wind.speed + 'm/s';
 }
 
 // Event listeners
-searchButton.addEventListener('click', () => {
-    getAndShowData();
-});
-
+myLocation.addEventListener('click', () => {
+	getUsersLocation();
+})
+searchButton.addEventListener('click', () => {getData()});
 document.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-        searchButton.click();
-    }
-});
-
-noSelected.addEventListener('click', () => {
-    noSelected.style.opacity = 0;
-});
-
+    if (event.key === 'Enter') {searchButton.click();}});
 // Alternate from weather info section to search section
 backToSearch.addEventListener('click', () => {
     cityInput.value = '';
@@ -260,35 +237,8 @@ backToSearch.addEventListener('click', () => {
     weatherInfo.classList.add('hide');
     cityInput.focus();
 });
-
 function alternateView() {
 	searchSection.classList.remove('show');
     searchSection.classList.add('hide');
     weatherInfo.classList.add('show');
 }
-// Preload background images for better experience when the background changes
-function preloadImages() {
-	const imageUrls = [
-		'Assets/Media/ash.webp',
-		'Assets/Media/clear.gif',
-		'Assets/Media/clouds.gif',
-		'Assets/Media/drizzle.webp',
-		'Assets/Media/fog.webp',
-		'Assets/Media/mist.webp',
-		'Assets/Media/rainy.webp',
-		'Assets/Media/sand.jpg',
-		'Assets/Media/smoke.webp',
-		'Assets/Media/snow.webp',
-		'Assets/Media/squall.jpg',
-		'Assets/Media/thunderstorm.webp',
-		'Assets/Media/tornado.webp'
-	];
-
-	// Crear imágenes y precargarlas
-	for (const imageUrl of imageUrls) {
-		const img = new Image();
-		img.src = imageUrl;
-	}
-}
-
-window.addEventListener('load', preloadImages);

@@ -2,9 +2,8 @@
 
 Welcome to WeatherNow, your sleek and modern weather web app! 🌦️
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
-[![OpenWeather API](https://img.shields.io/badge/Powered%20by-OpenWeather-orange.svg)](https://openweathermap.org/)
-[![Tooltip Library](https://img.shields.io/badge/Tooltips%20by-Tippy.js-pink.svg)](https://atomiks.github.io/tippyjs/)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![OpenWeather API](https://img.shields.io/badge/Powered%20by-OpenWeather-F96D38.svg)](https://openweathermap.org/)
 [![Flags API](https://img.shields.io/badge/Flags%20by-FlagsAPI-yellow.svg)](https://flagsapi.com/)
 
 ## Overview
@@ -38,7 +37,7 @@ We value your feedback! If you have suggestions or encounter any issues, feel fr
 
 ## License
 
-WeatherNow is licensed under the [MIT License](LICENSE.md). Feel free to fork, modify, and share!
+WeatherNow is licensed under the [Apache License 2.0](https://opensource.org/licenses/Apache-2.0). Feel free to fork, modify, and share!
 
 ---
 

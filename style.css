@@ -15,9 +15,6 @@ body{
     vertical-align: middle;
     margin-right: 10px;
 }
-#icon{
-    animation: rotate 1s infinite;
-}
 h1{
     font-size: 55px;
     font-family: 'Caveat', cursive;
@@ -26,7 +23,7 @@ h1{
     display: flex;
     background-size: cover;
     background-position: center;
-    background-image: url('Assets/Media/anime-clouds.jpg');
+    background-image: url('Assets/Media/anime-clouds.avif');
     background-color: black;
     align-items: center;
     justify-content: center;
@@ -41,25 +38,25 @@ h1{
     backdrop-filter: blur(10px);
     filter: brightness(0.98);
     transition: all 0.1s ease-in-out;
-    box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.5);
 }
 .textShadow{
     text-shadow: 0px 0px 4px black;
 }
 /* Weather Conditions */
-.ash{animation:fadeIn 1.3s;background-image:url('Assets/Media/ash.webp');}
-.clear{animation:fadeIn 1.3s;background-image:url('Assets/Media/clear.gif');}
-.clouds{animation:fadeIn 1.3s;background-image:url('Assets/Media/clouds.gif');}
-.drizzle{animation:fadeIn 1.3s;background-image:url('Assets/Media/drizzle.webp');}
-.fog{animation:fadeIn 1.3s;background-image:url('Assets/Media/fog.webp');}
-.mist{animation:fadeIn 1.3s;background-image:url('Assets/Media/mist.webp');}
-.rain{animation:fadeIn 1.3s;background-image:url('Assets/Media/rainy.webp');}
-.sand{animation:fadeIn 1.3s;background-image:url('Assets/Media/sand.jpg');}
-.smoke{animation:fadeIn 1.3s;background-image:url('Assets/Media/smoke.webp');}
-.snow{animation:fadeIn 1.3s;background-image:url('Assets/Media/snow.webp');}
-.squall{animation:fadeIn 1.3s;background-image:url('Assets/Media/squall.jpg');}
-.thunderstorm{animation:fadeIn 1.3s;background-image:url('Assets/Media/thunderstorm.webp');}
-.tornado{animation:fadeIn 1.3s;background-image:url('Assets/Media/tornado.webp');}
+.ash{animation:fadeIn 1s;background-image:url('Assets/Media/ash.webp');}
+.clear{animation:fadeIn 1s;background-image:url('Assets/Media/clear.gif');}
+.clouds{animation:fadeIn 1s;background-image:url('Assets/Media/clouds.gif');}
+.drizzle{animation:fadeIn 1s;background-image:url('Assets/Media/drizzle.gif');}
+.fog{animation:fadeIn 1s;background-image:url('Assets/Media/fog.webp');}
+.mist{animation:fadeIn 1s;background-image:url('Assets/Media/mist.webp');}
+.rain{animation:fadeIn 1s;background-image:url('Assets/Media/rainy.webp');}
+.sand{animation:fadeIn 1s;background-image:url('Assets/Media/sand.jpg');}
+.smoke{animation:fadeIn 1s;background-image:url('Assets/Media/smoke.webp');}
+.snow{animation:fadeIn 1s;background-image:url('Assets/Media/snow.webp');}
+.squall{animation:fadeIn 1s;background-image:url('Assets/Media/squall.jpg');}
+.thunderstorm{animation:fadeIn 1s;background-image:url('Assets/Media/thunderstorm.webp');}
+.tornado{animation:fadeIn 1s;background-image:url('Assets/Media/tornado.webp');}
 
 .searchSection{
     margin: 1.5em;
@@ -102,7 +99,6 @@ button{
     border-radius: 5px;
     font-size: 18px;
     padding: 0.4em;
-    transition: 0.2s all ease-in-out;
 
     &:hover{
         background-color: rgba(255, 255, 255, 0.3);
@@ -127,8 +123,7 @@ button{
     opacity: 0;
 }
 .hide{
-    animation: fadeIn 1.2s;
-    display: none;
+    animation: fadeIn 1.2s;display: none;
 }
 .fadeIn{
     animation: fadeIn 1s ease-in-out both;
@@ -148,16 +143,90 @@ button{
     margin: 0.8em;
     cursor: pointer;
 }
-nav{
-    transition: all 0.2s ease-in-out;
+#myLocation{
+    padding: 0;
+    border: 0;
+    width: auto;
+    height: 40px;
+    position: absolute;
+    margin: 2.5em;
+    top: -9px;
+    left: 0;
+    font-weight: bold;
+}
+
+#myLocation:hover{
+    background-color: transparent;
+    color: white;
+}
+
+#myLocation img{
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
 }
 .githubProfile{
-    transition: all 0.2s ease-in-out;
     position: absolute;
     margin: 2.5em;
     right: 0;
 }
+@keyframes tooltipTransition {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+@keyframes tooltipOut {
+    0%{
+        visibility: visible;
+        opacity: 1;
+    }100%{
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+.tooltip {
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+    font-size: 14px;
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.6em;
+    margin: 1em;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+}
+.arrow {
+    z-index: 3;
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: all 0.2s ease-in-out;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+}
 
+#arrow1 { margin: 2.9em 16em 0 0; }
+#arrow2 { margin: 2.9em 0 0 0.6em; }
+#arrow3 { margin: 2.9em 0 0 18em; }
+#tooltip1 { margin: 7em 19em 0 0; }
+#tooltip2 { margin: 7em 17.5em 0 17.6em; }
+#tooltip3 { margin: 7em 0 0 19.8em; }
+
+.tooltipTransition{
+    animation: tooltipTransition 0.3s ease-in-out both;
+}
+.tooltipOut{
+    animation: tooltipOut 0.3s ease-in-out;
+}
 /* Responsive Styles */
 @media (max-width: 800px) {
     #temp,#humidity,#wind{text-wrap: wrap;}
@@ -198,4 +267,4 @@ nav{
     .githubProfile{
         scale: 0.9;
     }
-    }
+}

@@ -4,6 +4,7 @@
 *{
     font-family: 'Hind', sans-serif;
     overflow: hidden;
+    transition: all 0.2s ease;
 }
 body{
     text-align: center;
@@ -44,19 +45,19 @@ h1{
     text-shadow: 0px 0px 4px black;
 }
 /* Weather Conditions */
-.ash{background-image:url('Assets/Media/ash.webp');}
-.clear{background-image:url('Assets/Media/clear.gif');}
-.clouds{background-image:url('Assets/Media/clouds.gif');}
-.drizzle{background-image:url('Assets/Media/drizzle.gif');}
-.fog{background-image:url('Assets/Media/fog.webp');}
-.mist{background-image:url('Assets/Media/mist.webp');}
-.rain{background-image:url('Assets/Media/rainy.webp');}
-.sand{background-image:url('Assets/Media/sand.jpg');}
-.smoke{background-image:url('Assets/Media/smoke.webp');}
-.snow{background-image:url('Assets/Media/snow.webp');}
-.squall{background-image:url('Assets/Media/squall.jpg');}
-.thunderstorm{background-image:url('Assets/Media/thunderstorm.webp');}
-.tornado{background-image:url('Assets/Media/tornado.webp');}
+.ash{animation:fadeIn 1.3s;background-image:url('Assets/Media/ash.webp');}
+.clear{animation:fadeIn 1.3s;background-image:url('Assets/Media/clear.gif');}
+.clouds{animation:fadeIn 1.3s;background-image:url('Assets/Media/clouds.gif');}
+.drizzle{animation:fadeIn 1.3s;background-image:url('Assets/Media/drizzle.gif');}
+.fog{animation:fadeIn 1.3s;background-image:url('Assets/Media/fog.webp');}
+.mist{animation:fadeIn 1.3s;background-image:url('Assets/Media/mist.webp');}
+.rain{animation:fadeIn 1.3s;background-image:url('Assets/Media/rainy.webp');}
+.sand{animation:fadeIn 1.3s;background-image:url('Assets/Media/sand.jpg');}
+.smoke{animation:fadeIn 1.3s;background-image:url('Assets/Media/smoke.webp');}
+.snow{animation:fadeIn 1.3s;background-image:url('Assets/Media/snow.webp');}
+.squall{animation:fadeIn 1.3s;background-image:url('Assets/Media/squall.jpg');}
+.thunderstorm{animation:fadeIn 1.3s;background-image:url('Assets/Media/thunderstorm.webp');}
+.tornado{animation:fadeIn 1.3s;background-image:url('Assets/Media/tornado.webp');}
 
 .searchSection{
     margin: 1.5em;

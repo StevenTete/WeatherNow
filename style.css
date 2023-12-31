@@ -4,11 +4,11 @@
 *{
     font-family: 'Hind', sans-serif;
     overflow: hidden;
-    transition: all 0.2s ease;
 }
 body{
     text-align: center;
     color: white;
+    background-color: black;
     margin: 0;
 }
 .favicon{
@@ -45,19 +45,20 @@ h1{
     text-shadow: 0px 0px 4px black;
 }
 /* Weather Conditions */
-.ash{animation:fadeIn 1.3s;background-image:url('Assets/Media/ash.webp');}
-.clear{animation:fadeIn 1.3s;background-image:url('Assets/Media/clear.gif');}
-.clouds{animation:fadeIn 1.3s;background-image:url('Assets/Media/clouds.gif');}
-.drizzle{animation:fadeIn 1.3s;background-image:url('Assets/Media/drizzle.gif');}
-.fog{animation:fadeIn 1.3s;background-image:url('Assets/Media/fog.webp');}
-.mist{animation:fadeIn 1.3s;background-image:url('Assets/Media/mist.webp');}
-.rain{animation:fadeIn 1.3s;background-image:url('Assets/Media/rainy.webp');}
-.sand{animation:fadeIn 1.3s;background-image:url('Assets/Media/sand.jpg');}
-.smoke{animation:fadeIn 1.3s;background-image:url('Assets/Media/smoke.webp');}
-.snow{animation:fadeIn 1.3s;background-image:url('Assets/Media/snow.webp');}
-.squall{animation:fadeIn 1.3s;background-image:url('Assets/Media/squall.jpg');}
-.thunderstorm{animation:fadeIn 1.3s;background-image:url('Assets/Media/thunderstorm.webp');}
-.tornado{animation:fadeIn 1.3s;background-image:url('Assets/Media/tornado.webp');}
+.ash{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/ash.webp');}
+.clear{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/clear.gif');}
+.clouds{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/clouds.webp');}
+.drizzle{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/drizzle.gif');}
+.fog{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/fog.webp');}
+.haze{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/mist.webp');}
+.mist{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/mist.webp');}
+.rain{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/rainy.webp');}
+.sand{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/sand.webp');}
+.smoke{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/smoke.webp');}
+.snow{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/snow.webp');}
+.squall{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/squall.jpg');}
+.thunderstorm{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/thunderstorm.webp');}
+.tornado{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/tornado.webp');}
 
 .searchSection{
     margin: 1.5em;
@@ -139,12 +140,12 @@ button{
     justify-content: center;
     align-items: center;
 }
-
 .item{
     margin: 0.8em;
     cursor: pointer;
 }
 nav{
+    z-index: 5;
     transition: none;
 }
 #myLocation{
@@ -155,16 +156,14 @@ nav{
     height: 40px;
     position: absolute;
     margin: 2.5em;
-    top: -9px;
+    top: -10px;
     left: 0;
     font-weight: bold;
 }
-
 #myLocation:hover{
     background-color: transparent;
     color: white;
 }
-
 #myLocation img{
     vertical-align: middle;
     width: 35px;
@@ -173,6 +172,7 @@ nav{
 .githubProfile{
     transition: none;
     position: absolute;
+    top: 0;
     margin: 2.5em;
     right: 0;
 }
@@ -272,5 +272,6 @@ nav{
     }
     .githubProfile{
         scale: 0.9;
+        top: -5px;
     }
 }

@@ -1,3 +1,4 @@
+// DOM Vars
 let searchButton=document.getElementById('search'),tempText=document.getElementById('temp'),humidity=document.getElementById('humidity'),wind=document.getElementById('wind'),searchedLocation=document.getElementById('location'),searchSection=document.getElementById('searchSection'),weatherInfo=document.getElementById('weatherInfo'),backToSearch=document.getElementById('backToSearch'),weatherStatus=document.getElementById('weatherStatus'),noSelected=document.getElementById('noSelected'),container=document.getElementById('container'),errorText=document.getElementById('errorText'),error404=document.getElementById('error404'),cityInput=document.getElementById('cityInput'),itemTemperature=document.getElementById('itemTemperature'),itemHumidity=document.getElementById('itemHumidity'),itemWind=document.getElementById('itemWind'),tooltip1=document.getElementById('tooltip1'),tooltip2=document.getElementById('tooltip2'),tooltip3=document.getElementById('tooltip3'),arrow1=document.getElementById('arrow1'),arrow2=document.getElementById('arrow2'),arrow3=document.getElementById('arrow3'), myLocation = document.getElementById('myLocation');
 
 // OpenWeather Constants
@@ -79,7 +80,7 @@ function handleNotFoundError() {
 }
 // Show weather info
 function handleWeatherData(json) {
-    searchedLocation.innerHTML = cityInput.value + ` <img class="fadeIn flag" src="https://flagsapi.com/${json.sys.country}/flat/64.png" alt="${json.sys.country} flag" style="vertical-align: middle; max-height: 55px;">`;
+    searchedLocation.innerHTML = capitalizeString(cityInput.value) + ` <img class="fadeIn flag" src="https://flagsapi.com/${json.sys.country}/flat/64.png" alt="${json.sys.country} flag" style="vertical-align: middle; max-height: 55px;">`;
 
     // Change background image and weather status depending on the weather obtained from the API
     container.className = 'container ' + json.weather[0].main.toLowerCase();
@@ -241,4 +242,17 @@ function alternateView() {
 	searchSection.classList.remove('show');
     searchSection.classList.add('hide');
     weatherInfo.classList.add('show');
+}
+
+function capitalizeString(str) {
+    // Ensure the string is not empty
+    if (str.length === 0) {
+        return "";
+    }
+    // Capitalize the first letter of each word, convert the rest to lowercase
+    let capitalizedWords = str.split(' ').map(function(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+    // Join the capitalized words back into a string
+    return capitalizedWords.join(' ');
 }

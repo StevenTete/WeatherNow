@@ -185,7 +185,7 @@ function handleWeatherData(json) {
 	  }
 
     let tempMode = 0;
-    const termImage = '<img src="Assets/Media/term.webp" alt="Term Logo" style="height: 40px; vertical-align: middle;">';
+    const termImage = '<img src="src/img/term.webp" alt="Term Logo" style="height: 40px; vertical-align: middle;">';
 
     tempText.addEventListener('click', () => {
         const celsiusTemp = json.main.temp;
@@ -218,9 +218,9 @@ function handleWeatherData(json) {
     });
 
     // Show the main weather data (temperature, humidity, and wind speed) with icons
-    tempText.innerHTML = '<img src="Assets/Media/term.webp" alt="Term Logo" style="height: 40px; vertical-align: middle;">' + json.main.temp + ' °C';
-    humidity.innerHTML = '<img src="Assets/Media/humidity.webp" alt="Humidity Logo" style="height: 37px; vertical-align: middle;"> ' + json.main.humidity + '%';
-    wind.innerHTML = '<img src="Assets/Media/wind.webp" alt="Wind Logo" style="height: 42px; vertical-align: middle;"> ' + json.wind.speed + 'm/s';
+    tempText.innerHTML = '<img src="src/img/term.webp" alt="Term Logo" style="height: 40px; vertical-align: middle;">' + json.main.temp + ' °C';
+    humidity.innerHTML = '<img src="src/img/humidity.webp" alt="Humidity Logo" style="height: 37px; vertical-align: middle;"> ' + json.main.humidity + '%';
+    wind.innerHTML = '<img src="src/img/wind.webp" alt="Wind Logo" style="height: 42px; vertical-align: middle;"> ' + json.wind.speed + 'm/s';
 }
 
 // Event listeners

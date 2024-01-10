@@ -42,19 +42,19 @@ el.addEventListener('mouseout', function() {
 // Preload background images for better experience when the background changes
 function preloadImages() {
 	const imageUrls = [
-		'Assets/Media/clear.gif',
-		'Assets/Media/clouds.gif',
-		'Assets/Media/drizzle.gif',
-		'Assets/Media/fog.webp',
-		'Assets/Media/mist.webp',
-		'Assets/Media/rainy.webp',
-		'Assets/Media/smoke.webp',
-		'Assets/Media/snow.webp',
-		'Assets/Media/thunderstorm.webp',
-		'Assets/Media/term.webp',
-		'Assets/Media/humidity.webp',
-		'Assets/Media/GitHub.ico',
-		'Assets/Media/wind.webp'
+		'src/img/clear.gif',
+		'src/img/clouds.webp',
+		'src/img/drizzle.gif',
+		'src/img/fog.webp',
+		'src/img/mist.webp',
+		'src/img/rainy.webp',
+		'src/img/smoke.webp',
+		'src/img/snow.webp',
+		'src/img/thunderstorm.webp',
+		'src/img/term.webp',
+		'src/img/humidity.webp',
+		'src/img/GitHub.ico',
+		'src/img/wind.webp'
 	];
 
 	// Crear imágenes y precargarlas

@@ -10,10 +10,10 @@
     <title>WeatherNow</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="Assets/Media/favicon.ico" type="image/x-icon">
-    <link rel="mask-icon" href="Assets/Media/maskableIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+    <link rel="mask-icon" href="src/img/maskableIcon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="preload" fetchpriority="high" as="image" href="Assets/Media/anime-clouds.avif" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="src/img/anime-clouds.avif" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -22,15 +22,15 @@
     <div class="container" id="container">
       <header>
         <nav>
-          <button id="myLocation"><img src="Assets/Media/user-location-line.webp" alt="Users Location Icon"> My Location</button>
-          <a class="githubProfile" href="https://github.com/StevenTete" target="_blank"><img src="Assets/Media/github.ico" alt="GitHub logo" style="width: 40px;"></a>
+          <button id="myLocation"><img src="src/img/user-location-line.webp" alt="Users Location Icon"> My Location</button>
+          <a class="githubProfile" href="https://github.com/StevenTete" target="_blank"><img src="src/img/github.ico" alt="GitHub logo" style="width: 40px;"></a>
         </nav>
       </header>
       <!-- Centered blur container -->
         <div class="background" id="background">
           <!-- Search section -->
             <div class="searchSection" id="searchSection">
-                <h1><img src="Assets/Media/favicon.ico" class="favicon" alt="Sun behind the clouds">WeatherNow</h1>
+                <h1><img src="src/img/favicon.ico" class="favicon" alt="Sun behind the clouds">WeatherNow</h1>
                 <input type="text" id="cityInput" placeholder="Insert a Country, State or City">
                 <br><br>
                 <button class="search" id="search"><i class="ri-search-2-line"></i> Search</button>
@@ -43,7 +43,7 @@
                 <h2 id="weatherStatus"></h2>
                 <div class="error" id="error">
                   <h2 id="errorText"></h2>
-                  <img src="Assets/Media/404.webp" id="error404" alt="404">
+                  <img src="src/img/404.webp" id="error404" alt="404">
                 </div>
                 <div class="flex">
                   <div class="arrow" id="arrow1"></div>
@@ -70,6 +70,6 @@
     </div>
     <!-- Scripts -->
     <script src="script.js"></script>
-    <script src="Assets/extra.js"></script>
+    <script src="src/extra.js"></script>
 </body>
 </html>

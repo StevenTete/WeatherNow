@@ -24,7 +24,7 @@ h1{
     display: flex;
     background-size: cover;
     background-position: center;
-    background-image: url('Assets/Media/anime-clouds.avif');
+    background-image: url('src/img/anime-clouds.avif');
     background-color: black;
     align-items: center;
     justify-content: center;
@@ -45,20 +45,20 @@ h1{
     text-shadow: 0px 0px 4px black;
 }
 /* Weather Conditions */
-.ash{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/ash.webp');}
-.clear{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/clear.gif');}
-.clouds{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/clouds.webp');}
-.drizzle{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/drizzle.gif');}
-.fog{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/fog.webp');}
-.haze{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/mist.webp');}
-.mist{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/mist.webp');}
-.rain{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/rainy.webp');}
-.sand{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/sand.webp');}
-.smoke{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/smoke.webp');}
-.snow{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/snow.webp');}
-.squall{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/squall.jpg');}
-.thunderstorm{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/thunderstorm.webp');}
-.tornado{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('Assets/Media/tornado.webp');}
+.ash{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/ash.webp');}
+.clear{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/clear.gif');}
+.clouds{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/clouds.webp');}
+.drizzle{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/drizzle.gif');}
+.fog{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/fog.webp');}
+.haze{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/mist.webp');}
+.mist{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/mist.webp');}
+.rain{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/rainy.webp');}
+.sand{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/sand.webp');}
+.smoke{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/smoke.webp');}
+.snow{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/snow.webp');}
+.squall{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/squall.jpg');}
+.thunderstorm{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/thunderstorm.webp');}
+.tornado{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/tornado.webp');}
 
 .searchSection{
     margin: 1.5em;

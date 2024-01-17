@@ -1,5 +1,4 @@
-// DOM Vars
-let searchButton=document.getElementById('search'),tempText=document.getElementById('temp'),humidity=document.getElementById('humidity'),wind=document.getElementById('wind'),searchedLocation=document.getElementById('location'),searchSection=document.getElementById('searchSection'),weatherInfo=document.getElementById('weatherInfo'),backToSearch=document.getElementById('backToSearch'),weatherStatus=document.getElementById('weatherStatus'),noSelected=document.getElementById('noSelected'),container=document.getElementById('container'),errorText=document.getElementById('errorText'),error404=document.getElementById('error404'),cityInput=document.getElementById('cityInput'),itemTemperature=document.getElementById('itemTemperature'),itemHumidity=document.getElementById('itemHumidity'),itemWind=document.getElementById('itemWind'),tooltip1=document.getElementById('tooltip1'),tooltip2=document.getElementById('tooltip2'),tooltip3=document.getElementById('tooltip3'),arrow1=document.getElementById('arrow1'),arrow2=document.getElementById('arrow2'),arrow3=document.getElementById('arrow3'), myLocation = document.getElementById('myLocation');
+let searchButton=document.getElementById('search'),tempText=document.getElementById('temp'),humidity=document.getElementById('humidity'),wind=document.getElementById('wind'),searchedLocation=document.getElementById('location'),searchSection=document.getElementById('searchSection'),weatherInfo=document.getElementById('weatherInfo'),backToSearch=document.getElementById('backToSearch'),weatherStatus=document.getElementById('weatherStatus'),noSelected=document.getElementById('noSelected'),container=document.getElementById('container'),errorText=document.getElementById('errorText'),error404=document.getElementById('error404'),cityInput=document.getElementById('cityInput'),itemTemperature=document.getElementById('itemTemperature'),itemHumidity=document.getElementById('itemHumidity'),itemWind=document.getElementById('itemWind'),tooltip1=document.getElementById('tooltip1'),tooltip2=document.getElementById('tooltip2'),tooltip3=document.getElementById('tooltip3'),arrow1=document.getElementById('arrow1'),arrow2=document.getElementById('arrow2'),arrow3=document.getElementById('arrow3'), myLocation = document.getElementById('myLocation'), searchResults = document.getElementById('searchResults'), errorAudio = document.getElementById('errorAudio'), searchResultsContainer = document.getElementById('searchResultsContainer')
 
 // OpenWeather Constants
 const api = 'https://api.openweathermap.org/data/2.5/weather?q=';
@@ -13,25 +12,32 @@ function getData() {
 
     // Show text warning if the search button is pressed and input is empty
     if (cityValue === '') {
-        noSelected.style.opacity = '1';
+		noSelected.style.display = 'block';  
 		setTimeout(() => {
-			noSelected.style.opacity = 0;
-		}, 2000);
+			noSelected.style.opacity = '1';
+			errorAudio.play();
+		}, 100);
+		setTimeout(() => {
+			noSelected.style.opacity = '0'
+			setTimeout(() => {
+				noSelected.style.display = 'none';
+			}, 200);
+		}, 3000);
+		
         return;
     }
-
     // Get API data
     fetch(query)
         .then(response => response.json())
         .then(json => {
             if (json.cod == 404) {
-                handleNotFoundError();
+                handleNotFoundError(error);
             } else {
                 handleWeatherData(json);
             }
         })
         .catch(error => {
-            console.error('Error fetching data:', error);
+            handleNotFoundError(error);
         });
 
     // Alternate from the search section to the weather info section
@@ -59,28 +65,28 @@ function getUsersLocation() {
 	});
 }
 // Error Handling
-function handleNotFoundError() {
-    searchedLocation.innerHTML = '';
-    weatherStatus.innerHTML = '';
-    tempText.innerHTML = '';
-    humidity.innerHTML = '';
-    wind.innerHTML = '';
-    errorText.innerHTML = 'Country, state, or city not found.';
-    error404.style.display = 'block';
+function handleNotFoundError(error) {
+    searchedLocation.innerHTML = ''
+    weatherStatus.innerHTML = ''
+    tempText.innerHTML = ''
+    humidity.innerHTML = ''
+    wind.innerHTML = ''
+    errorText.innerHTML = 'Country, state, or city not found.'
+    error404.style.display = 'block'
 
     setTimeout(() => {
-        console.clear();
-    }, 5);
+        console.clear()
+    }, 5)
 
     setTimeout(() => {
-        errorText.innerHTML = '';
-        error404.style.display = 'none';
-        backToSearch.click();
-    }, 3000);
+        errorText.innerHTML = ''
+        error404.style.display = 'none'
+        backToSearch.click()
+    }, 3000)
 }
 // Show weather info
 function handleWeatherData(json) {
-    searchedLocation.innerHTML = capitalizeString(cityInput.value) + ` <img class="fadeIn flag" src="https://flagsapi.com/${json.sys.country}/flat/64.png" alt="${json.sys.country} flag" style="vertical-align: middle; max-height: 55px;">`;
+    searchedLocation.innerHTML = capitalizeString(json.name) + ` <img class="fadeIn flag" src="https://flagsapi.com/${json.sys.country}/flat/64.png" alt="${json.sys.country} flag" style="vertical-align: middle; max-height: 55px;">`;
 
     // Change background image and weather status depending on the weather obtained from the API
     container.className = 'container ' + json.weather[0].main.toLowerCase();
@@ -232,18 +238,19 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {searchButton.click();}});
 // Alternate from weather info section to search section
 backToSearch.addEventListener('click', () => {
-    cityInput.value = '';
-    searchSection.classList.add('show');
-    weatherInfo.classList.remove('show');
-    weatherInfo.classList.add('hide');
-    cityInput.focus();
-});
+	searchResults.innerHTML = ''
+	searchResultsContainer.style.display = 'none'
+    cityInput.value = ''
+    searchSection.classList.add('show')
+    weatherInfo.classList.remove('show')
+    weatherInfo.classList.add('hide')
+    cityInput.focus()
+})
 function alternateView() {
 	searchSection.classList.remove('show');
     searchSection.classList.add('hide');
     weatherInfo.classList.add('show');
 }
-
 function capitalizeString(str) {
     // Ensure the string is not empty
     if (str.length === 0) {
@@ -256,3 +263,51 @@ function capitalizeString(str) {
     // Join the capitalized words back into a string
     return capitalizedWords.join(' ');
 }
+function autoCompleteSearch() {
+    cityInput.addEventListener('input', () => {
+
+        const searchTerm = cityInput.value.trim();
+
+        if (searchTerm.length >= 3) {
+			searchResultsContainer.style.display = 'block'
+			searchResults.innerHTML = ''
+            fetch(`https://api.openweathermap.org/data/2.5/find?q=${searchTerm}&units=metric&appid=${key}`)
+                .then(response => response.json())
+                .then(json => {
+					
+					let cities = json.list
+
+					if (cities.length > 0) {
+						cities.forEach(city => {
+							// Create a button foreach searched city 
+							const cityButton = document.createElement('button');
+							
+							// Add content to the new button
+							cityButton.innerHTML = `<img class="fadeIn flag" src="https://flagsapi.com/${city.sys.country}/shiny/24.png" alt="${city.sys.country} flag" style="vertical-align: middle; max-height: 55px;"> ${city.name}, ${city.sys.country}`;
+							
+							searchResults.appendChild(cityButton);
+	
+							cityButton.addEventListener('click', () => {
+								handleWeatherData(city)
+								alternateView()
+							})
+						});
+					}else{
+						searchResults.innerHTML = "Your input doesn't match with any city, state or country."
+					}
+                })
+                .catch(error => {
+                    handleNotFoundError(error)
+                });
+        }
+    });
+}
+
+autoCompleteSearch()
+
+cityInput.addEventListener('input', () => {
+	if (cityInput.value == '') {
+		searchResults.innerHTML = ''
+		searchResultsContainer.style.display = 'none'
+	}
+})

@@ -4,6 +4,20 @@
 *{
     font-family: 'Hind', sans-serif;
     overflow: hidden;
+    transition: all 0.2s;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
 }
 body{
     text-align: center;
@@ -20,21 +34,27 @@ h1{
     font-size: 55px;
     font-family: 'Caveat', cursive;
 }
+hr{
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255);
+    border-radius: 50%;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
 .container {
     display: flex;
     background-size: cover;
     background-position: center;
-    background-image: url('src/img/anime-clouds.avif');
+    background-image: url('src/img/main.jpg');
     background-color: black;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100dvh;
 }
 .background {
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 15px;
-    padding: 2em 3em;
-    width: 35%;
+    width: 40%;
     background-color: transparent;
     backdrop-filter: blur(10px);
     filter: brightness(0.98);
@@ -69,6 +89,26 @@ h1{
     padding: 1em;
     display: none;
 }
+.searchResultsContainer{
+    display: none;
+    margin-top: -20px;
+}
+#searchResults{
+    align-items: center;
+    text-align: center;
+    border-radius: 0.85em;
+    flex-wrap: wrap;
+    max-height: 100px;
+    z-index: 10;
+    overflow: auto;
+}
+#searchResults button{
+    text-align: left;
+    width: auto;
+    max-height: 40px;
+    margin: 3px;
+    font-size: 15px;
+}
 #weatherStatus{
     font-size: 29px;
     margin-bottom: -0.1em;
@@ -101,17 +141,23 @@ button{
     border-radius: 5px;
     font-size: 18px;
     padding: 0.4em;
-
-    &:hover{
-        background-color: rgba(255, 255, 255, 0.3);
-        color: rgba(0, 0, 0, 0.7);
-    }
+}
+button:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
 }
 #noSelected {
-    cursor: pointer;
+    background-color: transparent;
+    padding: 1em;
+    backdrop-filter: blur(12px);
+    border-radius: 1em;
+    position: absolute; right: 50px; bottom: 40px;
+    cursor: default;
+    display: none;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: all 0.4s ease;
     font-size: 18px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
 }
 @keyframes fadeIn {
     0%{
@@ -134,6 +180,7 @@ button{
     display: block;
 }
 .flex {
+    margin-bottom: -20px;
     width: 100%;
     display: flex;
     text-align: center;
@@ -219,14 +266,12 @@ nav{
     visibility: hidden;
     opacity: 0;
 }
-
 #arrow1 { margin: 2.9em 16em 0 0; }
 #arrow2 { margin: 2.9em 0 0 0.6em; }
 #arrow3 { margin: 2.9em 0 0 18em; }
 #tooltip1 { margin: 7em 19em 0 0; }
 #tooltip2 { margin: 7em 17.5em 0 17.6em; }
 #tooltip3 { margin: 7em 0 0 19.8em; }
-
 .tooltipTransition{
     animation: tooltipTransition 0.3s ease-in-out both;
 }
@@ -273,5 +318,15 @@ nav{
     .githubProfile{
         scale: 0.9;
         top: -5px;
+    }
+    #noSelected {
+        bottom: 100px;
+        padding: 0.6em;
+        border-radius: 0.5em;
+        width: 70%;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.36);
+    }
+    .flex{
+        margin-bottom: 0px;
     }
 }

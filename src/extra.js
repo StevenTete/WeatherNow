@@ -53,11 +53,11 @@ function preloadImages() {
 		'src/img/thunderstorm.webp',
 		'src/img/term.webp',
 		'src/img/humidity.webp',
-		'src/img/GitHub.ico',
+		'src/img/github.ico',
 		'src/img/wind.webp'
 	];
 
-	// Crear imágenes y precargarlas
+	// Create image and preload
 	for (const imageUrl of imageUrls) {
 		const img = new Image();
 		img.src = imageUrl;

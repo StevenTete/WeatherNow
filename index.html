@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
     <link rel="mask-icon" href="src/img/maskableIcon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="preload" fetchpriority="high" as="image" href="src/img/anime-clouds.avif" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="src/img/main.jpg" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -22,10 +22,11 @@
     <div class="container" id="container">
       <header>
         <nav>
-          <button id="myLocation"><img src="src/img/user-location-line.webp" alt="Users Location Icon"> My Location</button>
+          <button id="myLocation"><img style="vertical-align: middle;" src="src/img/user-location-line.webp" alt="Users Location Icon"> My Location</button>
           <a class="githubProfile" href="https://github.com/StevenTete" target="_blank"><img src="src/img/github.ico" alt="GitHub logo" style="width: 40px;"></a>
         </nav>
       </header>
+      <div id="noSelected"><i class="ri-earth-line"></i> You have not written any city</div>
       <!-- Centered blur container -->
         <div class="background" id="background">
           <!-- Search section -->
@@ -35,7 +36,11 @@
                 <br><br>
                 <button class="search" id="search"><i class="ri-search-2-line"></i> Search</button>
                 <br><br>
-                <span id="noSelected"><i class="ri-error-warning-line"></i> You have not written any city</span>
+                <div class="searchResultsContainer" id="searchResultsContainer">
+                  <p>Search Results</p>
+                  <hr>
+                  <div id="searchResults"></div>
+                </div>
             </div>
             <!-- Results section (hidden at the start) -->
             <div class="weather" id="weatherInfo">
@@ -68,6 +73,7 @@
             </div>
         </div>
     </div>
+    <audio id="errorAudio" style="display: none;" src="src/error.mp3"></audio>
     <!-- Scripts -->
     <script src="script.js"></script>
     <script src="src/extra.js"></script>

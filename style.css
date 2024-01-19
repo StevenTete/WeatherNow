@@ -4,7 +4,7 @@
 *{
     font-family: 'Hind', sans-serif;
     overflow: hidden;
-    transition: all 0.2s;
+    transition: all 0.5s ease;
 }
 
 *::-webkit-scrollbar {
@@ -22,7 +22,6 @@
 body{
     text-align: center;
     color: white;
-    background-color: black;
     margin: 0;
 }
 .favicon{
@@ -46,46 +45,44 @@ hr{
     background-size: cover;
     background-position: center;
     background-image: url('src/img/main.jpg');
-    background-color: black;
     align-items: center;
     justify-content: center;
-    min-height: 100dvh;
+    min-height: 105dvh;
 }
 .background {
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 15px;
+    margin-top: -40px;
     width: 40%;
     background-color: transparent;
     backdrop-filter: blur(10px);
     filter: brightness(0.98);
-    transition: all 0.1s ease-in-out;
     box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.5);
 }
 .textShadow{
     text-shadow: 0px 0px 4px black;
 }
 /* Weather Conditions */
-.ash{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/ash.webp');}
-.clear{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/clear.gif');}
-.clouds{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/clouds.webp');}
-.drizzle{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/drizzle.gif');}
-.fog{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/fog.webp');}
-.haze{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/mist.webp');}
-.mist{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/mist.webp');}
-.rain{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/rainy.webp');}
-.sand{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/sand.webp');}
-.smoke{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/smoke.webp');}
-.snow{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/snow.webp');}
-.squall{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/squall.jpg');}
-.thunderstorm{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/thunderstorm.webp');}
-.tornado{transition: all 0.5s ease;animation:fadeIn 1.3s;background-image:url('src/img/tornado.webp');}
+.ash{animation:fadeIn 1.3s;background-image:url('src/img/ash.webp');}
+.clear{animation:fadeIn 1.3s;background-image:url('src/img/clear.gif');}
+.clouds{animation:fadeIn 1.3s;background-image:url('src/img/clouds.webp');}
+.drizzle{animation:fadeIn 1.3s;background-image:url('src/img/drizzle.gif');}
+.fog{animation:fadeIn 1.3s;background-image:url('src/img/fog.webp');}
+.haze{animation:fadeIn 1.3s;background-image:url('src/img/mist.webp');}
+.mist{animation:fadeIn 1.3s;background-image:url('src/img/mist.webp');}
+.rain{animation:fadeIn 1.3s;background-image:url('src/img/rainy.webp');}
+.sand{animation:fadeIn 1.3s;background-image:url('src/img/sand.webp');}
+.smoke{animation:fadeIn 1.3s;background-image:url('src/img/smoke.webp');}
+.snow{animation:fadeIn 1.3s;background-image:url('src/img/snow.webp');}
+.squall{animation:fadeIn 1.3s;background-image:url('src/img/squall.jpg');}
+.thunderstorm{animation:fadeIn 1.3s;background-image:url('src/img/thunderstorm.webp');}
+.tornado{animation:fadeIn 1.3s;background-image:url('src/img/tornado.webp');}
 
 .searchSection{
     margin: 1.5em;
     text-wrap: pretty;
 }
 .weather{
-    transition: 0.4s all ease-in-out;
     padding: 1em;
     display: none;
 }
@@ -144,7 +141,7 @@ button{
 }
 button:hover{
     background-color: rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 #noSelected {
     background-color: transparent;
@@ -155,7 +152,6 @@ button:hover{
     cursor: default;
     display: none;
     opacity: 0;
-    transition: all 0.4s ease;
     font-size: 18px;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
 }
@@ -191,24 +187,20 @@ button:hover{
     margin: 0.8em;
     cursor: pointer;
 }
-nav{
-    z-index: 5;
-    transition: none;
+header{
+    width: 100%; height: auto;
+    position: absolute; top: 0; left: 0;
 }
 #myLocation{
-    transition: none;
-    padding: 0;
+    position: relative; top: -3px; left: -500px;
     border: 0;
     width: auto;
-    height: 40px;
-    position: absolute;
     margin: 2.5em;
-    top: -10px;
-    left: 0;
     font-weight: bold;
+    background-color: transparent; backdrop-filter: blur(20px);
+    border-radius: 10em;
 }
 #myLocation:hover{
-    background-color: transparent;
     color: white;
 }
 #myLocation img{
@@ -217,11 +209,49 @@ nav{
     height: 35px;
 }
 .githubProfile{
-    transition: none;
-    position: absolute;
-    top: 0;
+    top: 10px;
+    position: relative; left: 470px;
     margin: 2.5em;
-    right: 0;
+    &:hover{
+        filter: brightness(0);
+    }
+}
+footer{
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+footer p{
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    width: 15em;
+    font-size: 18px;
+    border-radius: 2em;
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+}
+.StevenTete {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+.StevenTete:hover {
+    color: yellow;
+}
+.StevenTete::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 4px;
+    left: 0;
+    background-color: yellow;
+    transition: width 0.3s ease;
+}
+.StevenTete:hover::before {
+    width: 100%;
 }
 @keyframes tooltipTransition {
     0%{
@@ -315,9 +345,11 @@ nav{
         font-size: 18px;
         padding-bottom: 12px;
     }
+    #myLocation{
+        left:  -35px;
+    }
     .githubProfile{
-        scale: 0.9;
-        top: -5px;
+        left: 30px;
     }
     #noSelected {
         bottom: 100px;

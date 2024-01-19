@@ -18,14 +18,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
+  <header>
+    <nav>
+      <button id="myLocation"><img style="vertical-align: middle;" src="src/img/user-location-line.webp" alt="Users Location Icon"> My Location</button>
+      <a id="github" class="githubProfile" href="https://github.com/StevenTete" target="_blank"><img src="src/img/github.ico" alt="GitHub logo" style="width: 40px;"></a>
+    </nav>
+  </header>
   <!-- TODO container -->
-    <div class="container" id="container">
-      <header>
-        <nav>
-          <button id="myLocation"><img style="vertical-align: middle;" src="src/img/user-location-line.webp" alt="Users Location Icon"> My Location</button>
-          <a class="githubProfile" href="https://github.com/StevenTete" target="_blank"><img src="src/img/github.ico" alt="GitHub logo" style="width: 40px;"></a>
-        </nav>
-      </header>
+    <main class="container" id="container">
       <div id="noSelected"><i class="ri-earth-line"></i> You have not written any city</div>
       <!-- Centered blur container -->
         <div class="background" id="background">
@@ -72,8 +72,11 @@
                 <br><button id="backToSearch"><i class="ri-arrow-left-line"></i> Back to Search</button><br>
             </div>
         </div>
-    </div>
-    <audio id="errorAudio" style="display: none;" src="src/error.mp3"></audio>
+        <audio id="errorAudio" style="display: none;" src="src/error.mp3"></audio>
+    </main>
+    <footer>
+      <p>Made with <img src="src/img/love-heart.gif" alt="Heart Gif" style="vertical-align: middle; max-height: 40px;"> by <a class="StevenTete" href="https://github.com/StevenTete" rel="noopener norreferer">StevenTete</a></p>
+    </footer>
     <!-- Scripts -->
     <script src="script.js"></script>
     <script src="src/extra.js"></script>

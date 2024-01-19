@@ -14,10 +14,20 @@ function getData() {
     if (cityValue === '') {
 		noSelected.style.display = 'block';  
 		setTimeout(() => {
+			if (window.innerWidth < 800) {
+				noSelected.style.left = '-30px';
+			} else{
+				noSelected.style.right = '0';
+			}
 			noSelected.style.opacity = '1';
 			errorAudio.play();
 		}, 100);
 		setTimeout(() => {
+			if (window.innerWidth < 800) {
+				noSelected.style.left = '-420px';
+			}else{
+				noSelected.style.right = '-400px';
+			}
 			noSelected.style.opacity = '0'
 			setTimeout(() => {
 				noSelected.style.display = 'none';

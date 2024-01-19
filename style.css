@@ -23,6 +23,7 @@ body{
     text-align: center;
     color: white;
     margin: 0;
+    background-image: url('src/img/main.jpg'); background-size: cover; background-position: center;
 }
 .favicon{
     max-height: 60px; 
@@ -144,16 +145,19 @@ button:hover{
     color: rgba(0, 0, 0, 0.7);
 }
 #noSelected {
-    background-color: transparent;
     padding: 1em;
-    backdrop-filter: blur(12px);
-    border-radius: 1em;
-    position: absolute; right: 50px; bottom: 40px;
+    position: absolute; right: -300px; bottom: 40px;
     cursor: default;
     display: none;
     opacity: 0;
+}
+#noSelected span{
     font-size: 18px;
+    padding: 0.5em;
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+    
 }
 @keyframes fadeIn {
     0%{
@@ -190,18 +194,21 @@ button:hover{
 header{
     width: 100%; height: auto;
     position: absolute; top: 0; left: 0;
+    z-index: 10;
+}
+nav{
+    display: flex; justify-content: space-between;
+    height: 100px;
 }
 #myLocation{
-    position: relative; top: -3px; left: -500px;
-    border: 0;
+    position: relative; top: 36px;
     width: auto;
-    margin: 2.5em;
-    font-weight: bold;
-    background-color: transparent; backdrop-filter: blur(20px);
-    border-radius: 10em;
+    margin-left: 3.5em; margin-right: 10px;
+    background-color: transparent; backdrop-filter: blur(20px); box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 #myLocation:hover{
     color: white;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 #myLocation img{
     vertical-align: middle;
@@ -209,9 +216,7 @@ header{
     height: 35px;
 }
 .githubProfile{
-    top: 10px;
-    position: relative; left: 470px;
-    margin: 2.5em;
+    margin-right: 4em; position: relative; top: 40px;
     &:hover{
         filter: brightness(0);
     }
@@ -346,17 +351,23 @@ footer p{
         padding-bottom: 12px;
     }
     #myLocation{
-        left:  -35px;
+        margin-left: 1.5em;
     }
     .githubProfile{
-        left: 30px;
+        margin-right: 1.5em;
     }
     #noSelected {
-        bottom: 100px;
-        padding: 0.6em;
-        border-radius: 0.5em;
-        width: 70%;
-        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.36);
+        padding: 2em;
+        bottom: 110px; left: -370px;
+        width: 100%;
+    }
+    #noSelected span{
+        line-height: 17px; text-wrap: nowrap;
+        width: 15em;
+        font-size: 18px;
+        border-radius: 2em;
+        box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.3);
+        margin: 20px auto;
     }
     .flex{
         margin-bottom: 0px;

@@ -238,7 +238,6 @@ function handleWeatherData(json) {
     humidity.innerHTML = '<img src="src/img/humidity.webp" alt="Humidity Logo" style="height: 37px; vertical-align: middle;"> ' + json.main.humidity + '%';
     wind.innerHTML = '<img src="src/img/wind.webp" alt="Wind Logo" style="height: 42px; vertical-align: middle;"> ' + json.wind.speed + 'm/s';
 }
-
 // Event listeners
 myLocation.addEventListener('click', () => {
 	getUsersLocation();
@@ -312,12 +311,18 @@ function autoCompleteSearch() {
         }
     });
 }
-
-autoCompleteSearch()
-
 cityInput.addEventListener('input', () => {
 	if (cityInput.value == '') {
 		searchResults.innerHTML = ''
 		searchResultsContainer.style.display = 'none'
 	}
 })
+autoCompleteSearch()
+
+window.onload = function() {
+	const body = document.querySelector('body');
+	setTimeout(() => {
+		body.click();
+	}, 150);
+};
+  

@@ -23,7 +23,7 @@ body{
     text-align: center;
     color: white;
     margin: 0;
-    background-image: url('src/img/main.jpg'); background-size: cover; background-position: center;
+    background-image: url('src/img/main.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;
 }
 .favicon{
     max-height: 60px; 
@@ -46,9 +46,10 @@ hr{
     background-size: cover;
     background-position: center;
     background-image: url('src/img/main.jpg');
+    background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
-    min-height: 105dvh;
+    min-height: 110dvh;
 }
 .background {
     border: 1px solid rgba(255, 255, 255, 0.7);
@@ -315,6 +316,9 @@ footer p{
 }
 /* Responsive Styles */
 @media (max-width: 800px) {
+    body{
+        animation: fadeIn 1s;
+    }
     #temp,#humidity,#wind{text-wrap: wrap;}
     h1{
         font-size: 44px;
@@ -326,10 +330,6 @@ footer p{
     }
     #error404{
         max-height: 200px;
-    }
-    .container{
-        margin-top: -2em;
-        background-size: 1600px;
     }
     .background{
         width: 85%;
@@ -371,5 +371,30 @@ footer p{
     }
     .flex{
         margin-bottom: 0px;
+    }
+}
+.contentDisabled{
+    display: none;
+    height: 100%; width: 100%;
+    position: absolute;
+    z-index: 15;
+    background-color: transparent;
+    backdrop-filter: blur(16px);
+}
+@media (max-width: 350px) {
+    body{
+        background-repeat: no-repeat;
+        background-size: 100% 200dvh;
+    }
+    header, .container{
+        display: none;
+    }
+    .contentDisabled{
+        display: block;
+    }
+}
+@media (min-width: 800px) and (max-width: 1000px){
+    .background{
+        width: 70%;
     }
 }

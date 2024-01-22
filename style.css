@@ -23,7 +23,7 @@ body{
     text-align: center;
     color: white;
     margin: 0;
-    background-image: url('src/img/main.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;
+    background-image: url('src/img/main.avif'); background-size: cover; background-position: center; background-repeat: no-repeat;
 }
 .favicon{
     max-height: 60px; 
@@ -45,7 +45,7 @@ hr{
     display: flex;
     background-size: cover;
     background-position: center;
-    background-image: url('src/img/main.jpg');
+    background-image: url('src/img/main.avif');
     background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
@@ -100,6 +100,7 @@ hr{
     max-height: 100px;
     z-index: 10;
     overflow: auto;
+    transition: height 1s ease;
 }
 #searchResults button{
     text-align: left;
@@ -224,7 +225,7 @@ nav{
 }
 footer{
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     text-align: center;
     width: 100%;
 }
@@ -358,7 +359,7 @@ footer p{
     }
     #noSelected {
         padding: 2em;
-        bottom: 110px; left: -370px;
+        bottom: 90px; left: -370px;
         width: 100%;
     }
     #noSelected span{
@@ -380,13 +381,14 @@ footer p{
     z-index: 15;
     background-color: transparent;
     backdrop-filter: blur(16px);
+    transition: none;
 }
 @media (max-width: 350px) {
     body{
         background-repeat: no-repeat;
         background-size: 100% 200dvh;
     }
-    header, .container{
+    header, footer, .container{
         display: none;
     }
     .contentDisabled{
@@ -397,4 +399,11 @@ footer p{
     .background{
         width: 70%;
     }
+}
+.connected, .disconnected{
+    width: 140px; position: absolute; bottom: 30px; left: 30px; scale: 0;
+    text-shadow: 0px 0px 4px black;
+}
+.wifi, .disconnectedLogo{
+    vertical-align: middle;
 }

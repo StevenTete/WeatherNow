@@ -234,9 +234,9 @@ function handleWeatherData(json) {
     });
 
     // Show the main weather data (temperature, humidity, and wind speed) with icons
-    tempText.innerHTML = '<img src="src/img/term.webp" alt="Term Logo" style="height: 40px; vertical-align: middle;">' + json.main.temp + ' °C';
-    humidity.innerHTML = '<img src="src/img/humidity.webp" alt="Humidity Logo" style="height: 37px; vertical-align: middle;"> ' + json.main.humidity + '%';
-    wind.innerHTML = '<img src="src/img/wind.webp" alt="Wind Logo" style="height: 42px; vertical-align: middle;"> ' + json.wind.speed + 'm/s';
+    tempText.innerHTML = '<img src="src/img/term.webp" alt="Term Logo" width="40" height="40" style="vertical-align: middle;">' + json.main.temp + ' °C';
+    humidity.innerHTML = '<img src="src/img/humidity.webp" alt="Humidity Logo" width="37" height="37" style="vertical-align: middle;"> ' + json.main.humidity + '%';
+    wind.innerHTML = '<img src="src/img/wind.webp" alt="Wind Logo" width="42" height="42" style="vertical-align: middle;"> ' + json.wind.speed + 'm/s';
 }
 // Event listeners
 myLocation.addEventListener('click', () => {
@@ -292,7 +292,8 @@ function autoCompleteSearch() {
 							const cityButton = document.createElement('button');
 							
 							// Add content to the new button
-							cityButton.innerHTML = `<img class="fadeIn flag" src="https://flagsapi.com/${city.sys.country}/shiny/24.png" alt="${city.sys.country} flag" style="vertical-align: middle; max-height: 55px;"> ${city.name}, ${city.sys.country}`;
+							cityButton.className = 'fadeIn'
+							cityButton.innerHTML = `<img class="fadeIn flag" src="https://flagsapi.com/${city.sys.country}/shiny/24.png" alt="${city.sys.country} flag" style="vertical-align: middle; max-height: 55px;"> ${city.name}, ${city.sys.country}`
 							
 							searchResults.appendChild(cityButton);
 	
@@ -318,11 +319,23 @@ cityInput.addEventListener('input', () => {
 	}
 })
 autoCompleteSearch()
-
-window.onload = function() {
-	const body = document.querySelector('body');
+const body = document.querySelector('body');
+setTimeout(() => {
+	body.click();
+}, 250);
+window.addEventListener("offline", function (e) {
+	let disconnected = document.getElementById('disconnected')
+	disconnected.style.scale = 1
+	document.getElementById('connectionAudio').play()
 	setTimeout(() => {
-		body.click();
-	}, 150);
-};
-  
+		disconnected.style.scale = 0
+	}, 5000);
+});
+window.addEventListener("online", function (e) {
+	let connected = document.getElementById('connected')
+	connected.style.scale = 1
+	document.getElementById('connectionAudio').play()
+	setTimeout(() => {
+		connected.style.scale = 0
+	}, 5000);
+});
